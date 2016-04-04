@@ -134,7 +134,7 @@ local function run(msg, matches)
     end
 
     -- Re-enable a plugin for this chat
-    if matches[1] == 'enable' and matches[3] == 'chat' then
+    if matches[1] == '+' and matches[3] == 'chat' then
       local receiver = get_receiver(msg)
       local plugin = matches[2]
       print("enable "..plugin..' on this chat')
@@ -142,14 +142,14 @@ local function run(msg, matches)
     end
 
     -- Enable a plugin
-    if matches[1] == 'enable' then
+    if matches[1] == '+' then
       local plugin_name = matches[2]
       print("enable: "..matches[2])
       return enable_plugin(plugin_name)
     end
 
     -- Disable a plugin on a chat
-    if matches[1] == 'disable' and matches[3] == 'chat' then
+    if matches[1] == '-' and matches[3] == 'chat' then
       local plugin = matches[2]
       local receiver = get_receiver(msg)
       print("disable "..plugin..' on this chat')
@@ -157,13 +157,13 @@ local function run(msg, matches)
     end
 
     -- Disable a plugin
-    if matches[1] == 'disable' then
+    if matches[1] == '-' then
       print("disable: "..matches[2])
       return disable_plugin(matches[2])
     end
 
     -- Reload all the plugins!
-    if matches[1] == 'reload' then
+    if matches[1] == '?' then
       return reload_plugins(true)
     end
   else
@@ -173,12 +173,12 @@ end
 
 return {
   patterns = {
-    "^#plugins$",
-    "^#plugins? (enable) ([%w_%.%-]+)$",
-    "^#plugins? (disable) ([%w_%.%-]+)$",
-    "^#plugins? (enable) ([%w_%.%-]+) (chat)",
-    "^#plugins? (disable) ([%w_%.%-]+) (chat)",
-    "^#plugins? (reload)$" },
+    "^[!/#]plugins$",
+    "^[!/#]plugins? (+) ([%w_%.%-]+)$",
+    "^[!/#]plugins? (-) ([%w_%.%-]+)$",
+    "^[!/#]plugins? (+) ([%w_%.%-]+) (chat)",
+    "^[!/#]plugins? (-) ([%w_%.%-]+) (chat)",
+    "^[!/#]plugins? (?)$" },
   run = run
 }
 
