@@ -18,7 +18,7 @@ function run(msg, matches)
 ●#plugins - (plugin name)
 غیر فعال کردن پلاگینی با نام (plugin name)
 
-●#plugins ؟
+●#plugins ?
 آپدیت کردن لیست پلاگین ها
 
 ●#addplug (text) (name)
