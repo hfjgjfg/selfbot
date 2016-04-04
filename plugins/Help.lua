@@ -4,21 +4,21 @@ function run(msg, matches)
   local help = [[Self-Bot Commands
 
 ●#bot on
-فعال کردن بوت در یک گروه خواص
+فعال کردن بوت در یک گروه خاص
 
 ●#bot off
-غیر فعال کردن بوت در یک گروه خواض
+غیر فعال کردن بوت در یک گروه خاص
 
 ●#plugins
 مشاهده لیست پلاگین ها
 
-●#plugins enable (plugin name)
+●#plugins + (plugin name)
 فعال کردن پلاگینی با نام (plugin name)
 
-●#plugins disable (plugin name)
+●#plugins - (plugin name)
 غیر فعال کردن پلاگینی با نام (plugin name)
 
-●#plugins reload
+●#plugins ؟
 آپدیت کردن لیست پلاگین ها
 
 ●#addplug (text) (name)
